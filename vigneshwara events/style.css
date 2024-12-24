@@ -1,0 +1,463 @@
+/* General Styles */
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: black;
+       /* border-bottom: 2px solid #557373;*/
+    /*position: sticky;*/
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    
+}
+
+.logo img {
+    height: 70px;
+}
+
+.video-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Full viewport height */
+    width: 100%; /* Full width */
+    overflow: hidden; /* Hides any overflow */
+    background: #000; /* Optional: black background for fallback */
+}
+.overlay-text { position: absolute; 
+    top: 50%; left: 50%; 
+    transform: translate(-50%, -50%); 
+    color: rgb(107, 78, 236); text-align: center; 
+    font-size: 100px; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    font-family: "Dancing Script", serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+}
+
+.overlay-text2 { position: absolute; 
+    top: 70%; left: 50%; 
+    transform: translate(-50%, -50%); 
+    color: rgb(255, 255, 255); 
+    text-align: center; 
+    font-size: 50px; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    font-family: "Dancing Script", serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+}
+
+@media (max-width: 768px) {
+    .overlay-text { 
+        font-size: 50px; 
+    }
+    .overlay-text2 { 
+        font-size: 30px; 
+    }
+}
+
+
+    video-home {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto; /* Maintain aspect ratio */
+    height: auto; /* Maintain aspect ratio */
+    min-width: 100%; /* Ensures it fills horizontally */
+    min-height: 100%; /* Ensures it fills vertically */
+    transform: translate(-50%, -50%); /* Center the video */
+    object-fit: cover; /* Ensures it fills the container without distortion */
+    z-index: 1; /* Keeps the video on top */
+    background: #000; /* Optional background to fill gaps */
+}
+
+
+
+
+.menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    margin: 0 15px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #ffd700;
+    font-weight: 700;
+    font-size: 23px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+
+.lora-menu{
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+.menu a:hover {
+    color: #daa520;
+    transform: scale(1.1);
+}
+
+/* Toggle Button */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+
+    color: #ffd700;
+    cursor: pointer;
+}
+
+/* Footer Styles */
+footer {
+    background: #f4ede9;
+    text-align: center;
+    padding: 20px;
+    color: #424b54;
+    font-size: 14px;
+    bottom: 0;
+    
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        background: #fff;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 10px 0;
+    }
+
+    .menu.open {
+        display: flex;
+    }
+
+    .menu li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* About Section Styling */
+.about-section {
+    padding: 60px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #444;
+    animation: fade-in 1s ease-in-out;
+    font-family: "Dancing Script", serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+}
+
+.about-description {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: #555;
+}
+
+.about-features {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.feature {
+    flex: 1;
+    max-width: 300px;
+    padding: 20px;
+    background: #f3f3f3;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0; /* Start invisible for animation */
+    transform: translateY(20px); /* Initial position */
+    transition: all 0.5s ease;
+}
+
+.feature h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.feature p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Animations */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slide-up {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.feature[data-animate="fade-in"] {
+    animation: fade-in 0.8s ease forwards;
+}
+
+.feature[data-animate="slide-up"] {
+    animation: slide-up 0.8s ease forwards;
+}
+
+
+
+
+
+
+/*contact us*/
+
+/* From Uiverse.io by javierBarroso */ 
+.parent {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .child {
+    
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    transition: all 0.3s cubic-bezier(0.68, 0.85, 0.265, 1.85);
+    border-radius: 5px;
+    margin: 0 5px;
+    box-shadow:
+      inset 1px 1px 2px #fff,
+      0 0 5px #4442;
+  }
+  
+  .child:hover {
+    background-color: white;
+    background-position:
+      -100px 100px,
+      -100px 100px;
+    /*transform: rotate3d(0.5, 1, 0, 30deg);*/
+    transform: perspective(180px) rotateX(60deg) translateY(2px);
+  }
+  
+  .child-1:hover {
+    box-shadow: 0px 10px 10px #1e90ff;
+  }
+  .child-2:hover {
+    box-shadow: 0px 10px 10px #ff00ff;
+  }
+  .child-3:hover {
+    box-shadow: 0px 10px 10px #000;
+  }
+  .child-4:hover {
+    box-shadow: 0px 10px 10px #4267b2;
+  }
+  
+  .button {
+    
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    font-size: 20px;
+    transition-duration: 0.5s;
+    transition-timing-function: cubic-bezier(0.68, -0.85, 0.265, 1.55);
+  }
+  
+  .child:hover > .button {
+    transform: translate3d(0px, 20px, 30px) perspective(80px) rotateX(-60deg)
+      translateY(2px) translateZ(10px);
+  }
+  
+  /* footer*/
+
+
+  .footer-menu {
+    display: flex;
+    flex-direction: column;
+text-align: start;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-menu li {
+    margin: 0 15px;
+}
+
+.footer-menu a {
+    text-decoration: none;
+    color: #7e7d75;
+    font-weight: 700;
+    font-size: 13px;
+}
+
+/*services card*/
+/* From Uiverse.io by SteveBloX */ 
+.card {
+    box-sizing: border-box;
+    width: 290px;
+    height: 254px;
+    background: rgba(217, 217, 217, 0.58);
+    border: 1px solid white;
+    box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+    backdrop-filter: blur(6px);
+    border-radius: 17px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    font-weight: bolder;
+    color: black;
+    margin: 20px;
+  }
+  
+  .card:hover {
+    border: 1px solid black;
+    transform: scale(1.05);
+  }
+  
+  .card:active {
+    transform: scale(0.95) rotateZ(1.7deg);
+  }
+
+  /*button*/
+  /* From Uiverse.io by mobinkakei */ 
+.btn {
+  width: 140px;
+  height: 50px;
+  background: linear-gradient(to top, #00154c, #12376e, #23487f);
+  color: #fff;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.btn span {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: top 0.5s;
+}
+
+.btn-text-one {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.btn-text-two {
+  position: absolute;
+  width: 100%;
+  top: 150%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.btn:hover .btn-text-one {
+  top: -100%;
+}
+
+.btn:hover .btn-text-two {
+  top: 50%;
+}
+header{
+    min-height:300px;
+    display: grid;
+    place-items: center;
+}
+.container {
+    padding: 0 1em;
+    max-width: 60rem;
+    margin:0 auto;
+}
